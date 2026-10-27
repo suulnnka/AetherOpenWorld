@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北京 · Low Poly 开放世界</title>
+<link rel="stylesheet" href="/css/style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "/vendor/three.module.js"
+  }
+}
+</script>
+</head>
+<body>
+<div id="app"></div>
+
+<div id="hud">
+  <div id="title">
+    <h1>北京 · Low Poly 开放世界</h1>
+    <div id="mapName">加载中…</div>
+  </div>
+  <div id="hint"></div>
+  <div id="locLabel"></div>
+  <canvas id="minimap" width="220" height="220"></canvas>
+  <a id="editorLink" href="/editor.html">🗺 打开地图编辑器</a>
+</div>
+
+<div id="loading">
+  <div class="box">
+    <h2>正在生成城市…</h2>
+    <div class="bar"><div id="loadBar"></div></div>
+    <div id="loadMsg">准备中</div>
+  </div>
+</div>
+
+<script type="module" src="/js/game/main.js"></script>
+</body>
+</html>

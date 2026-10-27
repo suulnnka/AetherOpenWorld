@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# runtime
+server-run.log
+*.log
+
+# OSM raw tile cache (re-fetchable via tools/osm-import.mjs)
+tools/osm-cache/
+
+# OS junk
+.DS_Store
+Thumbs.db

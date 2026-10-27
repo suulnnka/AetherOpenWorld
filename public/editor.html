@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地图编辑器 · 北京 Low Poly</title>
+<link rel="stylesheet" href="/css/editor.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "/vendor/three.module.js",
+    "three/addons/": "/vendor/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="viewport"></div>
+
+<header id="topbar">
+  <div class="brand">🗺 北京 Low Poly · 地图编辑器</div>
+  <input id="mapName" type="text" value="新地图" spellcheck="false">
+  <span id="dirty">●</span>
+  <div class="spacer"></div>
+  <button id="btnNew">新建</button>
+  <button id="btnDemo">生成示例北京</button>
+  <button id="btnSave" class="primary">保存到服务器</button>
+  <button id="btnLoad">地图库</button>
+  <button id="btnExport">导出 JSON</button>
+  <button id="btnImport">导入</button>
+  <input type="file" id="fileImport" accept=".json" hidden>
+  <a href="/" target="_blank" class="linkBtn">▶ 试玩本图</a>
+</header>
+
+<nav id="toolbar">
+  <button class="tool active" data-tool="select" title="Q">🖱<span>选择/移动</span></button>
+  <button class="tool" data-tool="block" title="B">🏙<span>街区生成器</span></button>
+  <button class="tool" data-tool="building" title="G">🏢<span>大楼生成器</span></button>
+  <button class="tool" data-tool="tree" title="T">🌳<span>树木生成器</span></button>
+  <button class="tool" data-tool="park" title="P">🏞<span>公园生成器</span></button>
+  <button class="tool" data-tool="water" title="W">💧<span>水域生成器</span></button>
+  <button class="tool" data-tool="landmark" title="L">🏯<span>地标建筑</span></button>
+  <button class="tool" data-tool="terrain" title="Y">⛰<span>地形生成器</span></button>
+</nav>
+
+<aside id="params">
+  <h3 id="paramTitle">选择 / 移动</h3>
+  <div id="paramBody"></div>
+</aside>
+
+<aside id="info">
+  <h3>统计</h3>
+  <div id="stats" class="card"></div>
+  <h3>选中元素</h3>
+  <div id="props" class="card"><div class="dim">未选中 — 用选择工具点击城市中的元素</div></div>
+  <h3>视图</h3>
+  <div class="card" id="viewOpts">
+    <label><input type="checkbox" id="optGrid" checked> 网格对齐</label>
+    <label><input type="checkbox" id="optHelper"> 显示网格</label>
+  </div>
+</aside>
+
+<footer id="hintbar">加载中…</footer>
+
+<div id="modal" class="hidden">
+  <div class="box">
+    <h3 id="modalTitle">地图库</h3>
+    <div id="modalBody"></div>
+    <button class="close" onclick="document.getElementById('modal').classList.add('hidden')">关闭</button>
+  </div>
+</div>
+
+<div id="busy" class="hidden"><div>⏳ 处理中…</div></div>
+
+<script type="module" src="/js/editor/editor.js"></script>
+</body>
+</html>
